@@ -8,7 +8,7 @@ class GameEngine:
     def advance_seed(self, player_input):
         """
         Advances the seed based on player input. 
-        Use a hash or simple mathematical function to map to a new seed.
+        Use a hash or simple mathemgatical function to map to a new seed.
         """
         # Example of deterministic advancement (linear congruential generator)
         multiplier = 1664525  # A common multiplier

@@ -1,0 +1,291 @@
+:: StoryTitle
+Project 1
+
+
+:: StoryData
+{
+  "ifid": "529A8C5F-363F-4067-869F-810C8819DC1C",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Start",
+  "zoom": 0.6
+}
+
+
+:: NextPage {"position":"200,75","size":"100,100"}
+<<screen "https://i.pinimg.com/originals/85/b8/b7/85b8b7d18a9453a2f42248bca5e5081b.jpg">><<type 1ms>>Your dialogue goes here. This text will type out character by character.
+
+You can include links like [[Go to Next Page|NextPage]] within the dialogue.
+
+Don't forget to close the macros properly!
+Your dialogue goes here. This text will type out character by character.
+
+You can include links like [[Go to Next Page|NextPage]] within the dialogue.
+
+Don't forget to close the macros properly!Your dialogue goes here. This text will type out character by character.
+
+You can include links like [[Go to Next Page|NextPage]] within the dialogue.
+
+Don't forget to close the macros properly!
+<</type>>
+<</screen>>
+
+
+:: Start {"position":"250,600","size":"100,100"}
+<<set $seed = 6261>>
+<<set $visited = []>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm_room_pixel_v2-export.png?raw=true">>Wow what a long day 
+[[That's weird...|dorm]] 
+
+<</screen>>
+
+
+:: Untitled Passage {"position":"125,400","size":"100,100"}
+<passage>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm_room_pixel_v2-export.png?raw=true">>
+<div>
+    <img src="https://github.com/swangtree/the_moth_effect/blob/main/images/dorm_room_pixel_v2-export.png?raw=true" usemap="#image-map">
+    <map name="image-map">
+        <area target="_self" alt="TV" title="TV" href="javascript:goToPassage('TVPassage');" coords="193,385,89,299" shape="rect">
+        <area target="_self" alt="Note" title="Note" href="javascript:goToPassage('NotePassage');" coords="77,401,138,469" shape="rect">
+        <area target="_self" alt="Goggles" title="Goggles" href="javascript:goToPassage('GogglesPassage');" coords="21,574,109,643" shape="rect">
+        <area target="_self" alt="Bed" title="Bed" href="javascript:goToPassage('BedPassage');" coords="421,273,477,273,583,319,611,280,637,281,658,265,701,286,723,309,727,343,767,389,766,593,563,590,563,622,530,623,531,580,442,483,442,513,416,514,415,393,629,403,629,439,709,440,710,394,668,396,640,395,629,403,416,393,417,389,421,387,417,389,416,393,415,393" shape="poly">
+        <area target="_self" alt="Phone" title="Phone" href="javascript:goToPassage('PhonePassage');" coords="630,395,708,439" shape="rect">
+    </map>
+</div>
+<</screen>>
+
+
+
+:: bed {"position":"550,925","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/placeholder.png?raw=true">><<type 1ms>>Your dialogue goes here. This text will type out character by character.
+<button onclick="goBack()">Back</button>
+
+<</type>>
+<</screen>>
+
+
+:: desk {"position":"550,525","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk.png?raw=true ">><<if $visited.includes("desk")>>
+   	Nick Wright is still 
+    <speech>This text will have the specified style applied.</speech>
+<<else>>This is your first time in the forest. The trees tower above you, and the air smells fresh.
+    <<set $visited.push("desk")>>
+<</if>>
+
+
+<button onclick="goBack()">Back</button>
+<</screen>>
+
+
+
+:: dorm {"position":"400,600","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm_room_pixel_v2-export.png?raw=true">><<type 1ms>>Wow what a long day 
+[[phone|phone]] 
+[[tv|desk]] 
+[[note|note]] 
+[[goggles|goggles]] 
+[[bed|bed]] 
+
+<</type>>
+<</screen>>
+
+
+:: goggles {"position":"550,625","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/placeholder.png?raw=true">><<type 1ms>>Your dialogue goes here. This text will type out character by character.
+<button onclick="goBack()">Back</button>
+
+<</type>>
+<</screen>>
+
+
+:: note {"position":"550,725","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/placeholder.png?raw=true">><<type 1ms>>Your dialogue goes here. This text will type out character by character.
+<button onclick="goBack()">Back</button>
+
+<</type>>
+<</screen>>
+
+
+:: phone {"position":"550,825","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/placeholder.png?raw=true">><<type 1ms>>Your dialogue goes here. This text will type out character by character.
+<button onclick="goBack()">Back</button>
+
+<</type>>
+<</screen>>
+
+
+:: q0 {"position":"325,225","size":"100,100"}
+[[q1]]
+
+
+
+:: q1 {"position":"550,275","size":"100,100"}
+[[follow instructions|q2]]
+[[don't|q4]]
+
+
+:: q2 {"position":"675,125","size":"100,100"}
+[[see future|q3+]]
+
+
+:: q3+ {"position":"875,125","size":"100,100"}
+[[endings|q6+]]
+[[q0]]
+[[q1]]
+
+
+:: q4 {"position":"800,400","size":"100,100"}
+[[q0]]
+[[q1]]
+[[q5]]
+
+
+:: q5 {"position":"1050,425","size":"100,100"}
+
+
+
+:: q6+ {"position":"1075,200","size":"100,100"}
+
+
+
+:: StoryScript [script]
+
+window.back = "";
+
+Macro.add('screen', {
+    tags: [], // This defines the macro as an enclosing macro
+    handler: function () {
+        var imageUrl = this.args[0];
+        var content = this.payload[0].contents;
+
+        /* Build the HTML structure */
+        var output = '<div class="screen">';
+        output += '<div class="image">';
+        output += '<img src="' + imageUrl + '" alt="Image" usemap="#image-map">';
+        output += '</div>';
+        output += '<div class="dialogue">';
+      	output += '<<type 50ms>>';
+        output += content;
+        output += '<</type>>';
+        output += '</div>';
+        output += '</div>';
+
+        /* Render the content */
+        new Wikifier(this.output, output);
+    }
+});
+
+/* Global function to transition between passages using image maps */
+window.goToPassage = function (passageName) {
+    if (passageName && Story.has(passageName)) {
+        Engine.play(passageName);
+    } else {
+        console.error('Passage not found: ' + passageName);
+    }
+};
+
+/* Listen for passage navigation */
+$(document).on(':passagerender', function (event) {
+    if (window.back === '') {
+        window.back = event.detail.passage.title; // Initialize for the first passage
+    } else {
+        // Store the current passage title before navigating to a new one
+        State.variables.previousPassage = window.back;
+        window.back = event.detail.passage.title;
+    }
+});
+
+/* Function to navigate back */
+window.goBack = function () {
+    if (State.variables.previousPassage) {
+        Engine.play(State.variables.previousPassage);
+    } else {
+        alert('No previous passage to return to!');
+    }
+};
+
+
+:: StoryStylesheet [stylesheet]
+/* Import the "Press Start 2P" font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#ui-bar, #ui-bar-toggle {
+    display: none !important;
+}
+
+/* Set the font and background for the entire story */
+body {
+    image-rendering: pixelated;  /* Ensures pixel art is crisp */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1vw; /* Base font size scales with screen */
+    background-color: #1b191b;
+    color: #a9b2a2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Updated CSS for .screen */
+.screen {
+    position: absolute;
+    top: 3vw;
+    bottom: 3vw;
+    left: 3vw;
+    right: 3vw;
+    width: 93vw;
+    height: 35vw;
+    border: 0.5vw solid #a9b2a2;
+    background-color: #1b191b;
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+}
+
+/* Image container adjustments */
+.screen .image {
+    flex: 0 0 35%; /* 35% of the screen width */
+    max-width: 35%; /* Ensure the image never exceeds this width */
+    max-height: 33vw; /* Cap height based on the screen container */
+    display: flex;
+    justify-content: flex-start; /* Align image to the start (left) */
+    align-items: center; /* Vertically center the image */
+    margin: 1.2vw; /* Reduced margin for tighter spacing */
+    box-sizing: border-box;
+}
+
+/* Ensure the image scales properly */
+.screen .image img {
+    width: 100%; /* Force the image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra spacing below the image */
+}
+
+/* Style for the dialogue area */
+.screen .dialogue {
+    flex: 1; /* Take up the remaining space */
+    overflow-y: auto;
+    padding: 1.2vw; /* Reduced padding for more compact text area */
+    padding-left: 0px;
+    box-sizing: border-box;
+    font-size: 1.2vw; /* Adjusted for better readability */
+    line-height: 1.6; /* Slightly tighter line spacing */
+  
+  	/* Hide scrollbar arrows */
+    scrollbar-width: auto; /* For Firefox */
+    scrollbar-color: #a9b2a2 #2e222f; /* White scrollbar, black 
+  track*/
+    scrollbar-button-display: none
+}
+
+/* Style for links */
+.screen .dialogue a {
+    color: #f2ec8b;
+    text-decoration: none;
+}
+
+.screen .dialogue a:hover {
+    text-decoration: underline;
+}
+
+.screen .dialogue speech{
+  color: #f1e9e4;
+}

@@ -1,0 +1,860 @@
+:: StoryTitle
+Project 1
+
+
+:: StoryData
+{
+  "ifid": "529A8C5F-363F-4067-869F-810C8819DC1C",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Start",
+  "zoom": 0.6
+}
+
+
+:: Start {"position":"250,600","size":"100,100"}
+<<set $bets = [0,0]>> 
+<<set $tv_visited_times = 0>> 
+<<set $has_bet = false>> 
+<<set $bet_amount = 50000>>
+<<set $future_outcome = "blank">> 
+<<set $is_day= true>>
+<<set $seen_note = false>> 
+<<set $speed = "20ms">> 
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm.png?raw=true">><<type $speed>>It's the first day of classes at Swarthmore College on <span class="bold-red">September 7th, 2023</span>, and you're already swamped. You woke up late this morning, so you left the room this morning without brushing your teeth (eww..) or picking a sick outfit to make a good first impression on your new classmates. No wonder they all probably think you're lame AF.
+
+<</type>><<timed 1s transition>><</timed>><<type $speed>>When you get back to your dorm after the Linear Algebra mentor session, you notice a weird pair of — [[are those goggles?|dorm]]
+
+[[(fast mode for replays)|dorm][$speed to "1ms"]]
+
+<</type>>
+<</screen>>
+
+
+
+:: bed {"position":"550,925","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<type $speed>>It's still daytime, but you feel exhausted. Maybe you can call it a day early today..
+
+[[Take 5 melatonin pills|sleep]]
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: bed_night {"position":"1125,925","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true">><<type $speed>>Your bed looks ridiculously inviting right now. It's been a long day, and the glow of the moon through the window only makes your bed look softer.
+
+Maybe it’s time to end the day and see what tomorrow brings…
+
+[[Go to sleep|sleep]]
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: desk {"position":"550,525","size":"100,100"}
+<<if $tv_visited_times === 0>>
+<<set $tv_visited_times += 1>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk.png?raw=true">><<type $speed>>Rick Night is yapping his head off about the football game tonight:
+
+“It’s the NFL season opener tonight, and there’s NO WAY the Chirfs don’t go 17-0 this season! I’ll never show my face in public again if they don’t…”
+
+Go on [[Youtoob|game1]] until the football game starts  
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+<<elseif $tv_visited_times === 1>>
+<<set $tv_visited_times += 1>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk.png?raw=true">><<type $speed>>Rick Night is still yapping:
+
+“Tragic Mahomies is the best quarterback we’ve ever seen! Now if we could only get his bladder issues under control, the Chirfs would be unstoppable…”
+
+Go on [[Youtoob|game]] until the football game starts  
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+<<else>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk.png?raw=true">><<type $speed>>Bro is still yapping. You’re starting to wonder if this guy ever runs out of things to say.
+
+“It’s really a miracle how long this show goes on for. You’d think they’d run out of script at some point…”
+
+Go on [[Youtoob|game]] until the football game starts  
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+<</if>>
+
+
+
+:: desk_night {"position":"1125,525","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk_night.png?raw=true">><<type $speed>>The faint hum of the CRT fills the room as an endless late-night infomercial blares on the screen. 
+
+“Introducing the **ShamKapow™**! The revolutionary cleaning cloth that absorbs **10 times its weight in liquid!** That’s right, **10 TIMES!**
+
+Even the kinds you're thinking about ಠ‿↼
+
+Why settle for less when you can ShamKapow your mess away?”
+
+The monotony of the commercial somehow feels oddly comforting, even as it loops for the fifth time.
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: dorm {"position":"400,600","size":"100,100"}
+<<if $is_day>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm.png?raw=true">><<type $speed>>There’s a weird [[pair of goggles|goggles]] on the floor. Someone from your hall must have left it here last night during your room tour
+
+You picked up an [[old CRT|desk]] for free from the move-out sale. It’s a wonder it still works, but you can only get it to play the cable channels...
+
+Your [[bed|bed]] looks so comfy. Too bad it's only 5pm
+
+There’s a [[note|note]] in your handwriting on the desk that you don't remember writing
+
+Your [[phone|phone]] buzzes with notifications
+
+Hint: Try exploring the different objects
+<</type>>
+<</screen>>
+<<else>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm_night.png?raw=true">><<type $speed>>The [[goggles|goggles_night]] are still there (why would they move...)
+
+The [[CRT|desk_night]] hums faintly, stuck on some late-night infomercial you don’t remember turning on
+
+Your [[bed|bed_night]] looks ridiculously inviting right now
+
+Maybe you should rewrite your [[note|note_night]]
+
+Your [[phone|phone_night]] buzzes faintly
+<</type>>
+<</screen>>
+<</if>>
+
+
+
+:: ending_beach {"position":"175,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_beach2]]
+<</type>>
+<</screen>>
+
+
+:: ending_beach2 {"position":"175,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/beach.png?raw=true">><<type $speed_end>>Checking your bank account makes you quickly realize otherwise. You decide to do the noble thing that meemaw would've wanted, and drop out of Swarthmore to spend the rest of your (short) life partying in Ibiza. You can only hope that grandma is smiling at you somewhere.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try betting on different outcomes and different amounts after watching the game at night by changing the note. There are a total of 7 endings.
+
+[[I wish I would've bet it all on black|restart]]
+<</type>>
+<</screen>>
+
+
+:: ending_blank {"position":"925,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_blank2]]
+<</type>>
+<</screen>>
+
+
+:: ending_blank2 {"position":"925,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>After you wake up, you go about your life at Swarthmore as usual. Unfortunately, you perish a month later from an unfortunate incident involving one too many hotdogs.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try looking at the note and placing a bet next time on your phone phone — it's what grandma would've wanted. There are a total of 7 endings.
+
+[[Damnit Joey Chestnut|restart]]
+<</type>>
+<</screen>>
+
+
+
+:: ending_cafe {"position":"425,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_cafe2]]
+<</type>>
+<</screen>>
+
+
+:: ending_cafe2 {"position":"425,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/cafe.png?raw=true">><<type $speed_end>>You realize that you're not dreaming after you check your bank account. With such financial freedom, you start to question everything in your life. Do you really want to spend the rest of your life making Powerpoints? 
+
+You decide to take a gap year to open a tea shop with your earnings. You don't know what the future holds, but at least you don't have to learn Excel.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try betting on different outcomes and different amounts after watching the game at night by changing the note. There are a total of 7 endings.
+
+[[Maybe I should’ve majored in economics|restart]]
+<</type>>
+<</screen>>
+
+
+
+:: ending_dorm {"position":"300,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_dorm2]]
+<</type>>
+<</screen>>
+
+
+:: ending_dorm2 {"position":"300,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/dorm.png?raw=true">><<type $speed_end>>After realizing that your money is indeed gone, you become sucked into a life of "data-driven" sports betting, convinced your next big win is around the corner. After a few "minor" setbacks, you're broke AF, but thank god you're a college student. You spend the rest of your days at Swarthmore bumming it out.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try betting on different outcomes and different amounts after watching the game at night by changing the note. There are a total of 7 endings.
+
+[[At least ramen’s cheap|restart]]
+<</type>>
+<</screen>>
+
+
+
+:: ending_dystopia {"position":"800,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_dystopia2]]
+<</type>>
+<</screen>>
+
+
+:: ending_dystopia2 {"position":"800,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/ruins.png?raw=true">><<type $speed_end>>It wasn't a dream, the world has turned into a nightmare. War breaks out in the middle east two days later as an insane, settler-colonial dictator lashes out at his neighbors and pulls the world into nuclear armageddon. Luckily, you were out of town for the day, but the world's financial institutions have been destroyed, along with most of Philadelphia. You try to survive by stealing nuts from squirrels and planting them for the spring.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try betting on different outcomes and different amounts after watching the game at night by changing the note. There are a total of 7 endings.
+
+[[Squirrels are so cute meep :3|restart]]
+<</type>>
+<</screen>>
+
+
+
+:: ending_home {"position":"550,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_home2]]
+<</type>>
+<</screen>>
+
+
+:: ending_home2 {"position":"550,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/empty_room.png?raw=true">><<type $speed_end>>After waking up, the news hits like a truck: a massive bean-eating epidemic originating in Britain has spiraled out of control. The world is shutting down again, and all major British financial institutions have been frozen.
+<<if $final_winnings > 50000>>
+You check your CrapKings account. Your gambling wins are frozen. All that money... and nowhere to spend it. Who knew CrapKings was British??
+<<else>>
+You check your CrapKings account. Your gambling losses are frozen. Who knew CrapKings was British?
+<</if>>
+A couple months later, you're forced out of your Swarthmore dorm, packing it up as clean as you found it. You spend the next year watching Rick Night bumbling his ass off and dreading anything bean related.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try betting on different outcomes and different amounts after watching the game at night by changing the note. There are a total of 7 endings.
+
+[[The British were a mistake|restart]]
+<</type>>
+<</screen>>
+
+
+
+:: ending_lounge {"position":"675,1250","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed_end>>The shock makes you pass out. When you finally wake up on <span class="bold-red">September 8th</span>, you can't find the goggles.
+
+[[Maybe this was all a dream...|ending_lounge2]]
+<</type>>
+<</screen>>
+
+
+:: ending_lounge2 {"position":"675,1375","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/lounge.png?raw=true">><<type $speed_end>>Turns out what happened wasn't a dream — it was a nightmare. CrapKings debt collectors have been tracking you down. You hide out in the Swarthmore lounge, surviving on pocket change and crumbs from the couch. One day, you hope to collect enough state quarters to pay them back.
+
+<span class="bold-red">The end?</span>
+
+Hint: Try betting on different outcomes and different amounts after watching the game at night by changing the note. There are a total of 7 endings.
+
+[[The Kansas state quarter is the coolest|restart]]
+<</type>>
+<</screen>>
+
+
+
+:: game {"position":"750,525","size":"100,100"}
+<<run _results = setup.updateEnding($has_bet, $bets, $bet_amount)>>
+<<set $future_outcome = _results[0]>>
+<<set $final_winnings = _results[1]>>
+<<set $chirfs_win = _results[2]>>
+<<set $over_hits = _results[3]>>
+<<set $is_day = false>> <!-- Change the time to night -->
+
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/Game_TV.png?raw=true">><<type $speed>>Boe Buckteeth's voice fills the room as the final results are announced:
+<<if $chirfs_win>>
+“The Chirfs have done it! They came out on top in a thrilling victory!”
+<<else>>
+“The Cougars stunned everyone! What an incredible upset!”
+<</if>><<if $over_hits>>
+“What high-scoring action from start to finish!”
+<<else>>
+“What a defensive masterclass from both teams!”
+<</if>><<if $has_bet>>
+Now you have <span class="bold-red">$final_winnings</span> moolahs
+<<if $final_winnings < 0>>
+How did this even happen...
+<<elseif $final_winnings <= 50000>>
+That wasn't great, but gamblers always quit before they make it big...
+<<elseif $final_winnings <= 100000>>
+You're foaming at the mouth — if only you bet a little more...
+<<elseif $final_winnings <= 200000>>
+You have some serious introspection. Do you really wanna spend the rest of your life working a desk job? Or should you chase your dreams...
+<<else>>
+"That was for you meemaw!! I'm going to do what you never could, crash out and burn with some studs in Ibiza!"
+<</if>>
+<</if>>
+Go back to your [[dorm|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: game1 {"position":"650,525","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk.png?raw=true">><<type $speed>>You watch League of Legends highlights until the football game.
+
+Watch the [[game|game]]
+<</type>>
+<</screen>>
+
+
+
+:: goggles {"position":"550,625","size":"100,100"}
+<<run _results = setup.updateEnding($has_bet, $bets, $bet_amount)>>
+<<set _future_outcome = _results[0]>>
+<<set _final_winnings = _results[1]>>
+<<set _chirfs_win = _results[2]>>
+<<set _over_hits = _results[3]>>
+
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/goggles.png?raw=true">><<type $speed>>These are a pair of seriously nice goggles. You pontificate over whether or not to keep them.
+
+On the side of the goggles it says:
+
+“Look into your …” (the rest of the line is unreadable)
+“Press the red button while wearing for shocking results.”
+
+Someone in your hall must be into some kinky stuff…
+<<if _future_outcome === "beach">>
+[[Put the goggles on|goggles_beach]]
+<<elseif _future_outcome === "dorm">>
+[[Put the goggles on|goggles_dorm]]
+<<elseif _future_outcome === "cafe">>
+[[Put the goggles on|goggles_cafe]]
+<<elseif _future_outcome === "home">>
+[[Put the goggles on|goggles_home]]
+<<elseif _future_outcome === "lounge">>
+[[Put the goggles on|goggles_lounge]]
+<<elseif _future_outcome === "dystopia">>
+[[Put the goggles on|goggles_dystopia]]
+<<else>>
+[[Put the goggles on|goggles_blank]]
+<</if>>
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: goggles_beach {"position":"175,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/beach_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. You can see a beautiful beach outside...
+
+Press [[Button|ending_beach]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_blank {"position":"925,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. And it's blank. Maybe this thing is broken...
+
+Press [[Button|ending_blank]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_cafe {"position":"425,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/cafe_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. You can just make out a cute cafe...
+
+Press [[Button|ending_cafe]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_dorm {"position":"300,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/dorm_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. Why can you see your dorm through these goggles... And why does it look even messier than it is now...
+
+Press [[Button|ending_dorm]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_dystopia {"position":"800,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/ruins_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. Still, you don't like what you see...
+
+Press [[Button|ending_dystopia]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_home {"position":"550,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/empty_room_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. Why is your room as empty as you found it?
+
+Press [[Button|ending_home]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_lounge {"position":"675,1125","size":"100,100"}
+<<set $speed_end = "20ms">>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/lounge_goggles.png?raw=true">><<type $speed_end>>The display only shows green and red. You can see the lounge outside your hallway...
+
+Press [[Button|ending_lounge]] for “shocking” results. You have a feeling this is gonna hurt
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+:: goggles_night {"position":"1125,625","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/goggles_night.png?raw=true">><<type $speed>>The goggles sit on your floor, faintly reflecting the moonlight streaming through your window.
+
+On the side of the goggles, you read the same cryptic text:
+
+“Look into your …” (the rest of the line is even more unreadable)
+“Press the red button while wearing for shocking results.”
+
+Maybe it’s time to see what these goggles can really do…
+
+<<if $future_outcome === "beach">>
+[[Put the goggles on|goggles_beach]]
+<<elseif $future_outcome === "dorm">>
+[[Put the goggles on|goggles_dorm]]
+<<elseif $future_outcome === "cafe">>
+[[Put the goggles on|goggles_cafe]]
+<<elseif $future_outcome === "home">>
+[[Put the goggles on|goggles_home]]
+<<elseif $future_outcome === "lounge">>
+[[Put the goggles on|goggles_lounge]]
+<<elseif $future_outcome === "dystopia">>
+[[Put the goggles on|goggles_dystopia]]
+<<else>>
+[[Put the goggles on|goggles_blank]]
+<</if>>
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: note {"position":"550,725","size":"100,100"}
+<<set $seen_note = true>> 
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/note.png?raw=true">><<type $speed>>There’s a note stuck on your desk in your handwriting. You don’t remember writing a note, although you went to bed pretty late last night.
+
+The note reads:
+
+"Bet $bet_amount on the <<if $bets[0] === 0>>Chirfs<<else>>Cougars<</if>> and <<if $bets[1] === 0>>Over<<else>>Under<</if>> on points
+Trust me bro"
+
+<</type>><<timed 1s transition>><</timed>><<type $speed>>That's seems like some great betting advice...
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: note_night {"position":"1125,725","size":"100,100"}
+<<set $bets = [0, 0]>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/note_night.png?raw=true">><<type $speed>>There's a blank note on your desk. <span class="bold-red">Maybe you should write a note for what you should've bet on...</span>
+
+Which team should you bet on (the odds seem strangely fair)
+
+- Chirfs: American odds **-200** (1.5x payout if they win)
+- Cougars: American odds **+200** (3x payout if they win)
+
+[[Bet on the Chirfs|note_night2][$bets[0] to 0]]
+[[Bet on the Cougars|note_night2][$bets[0] to 1]]
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: note_night2 {"position":"1225,725","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/blank_note.png?raw=true">><<type $speed>>Let's make this thing into a parlay!
+
+Will the total combined score of the game go over or under 53 points?
+
+- Over: American odds **-100** (2x payout if the total score meets or exceeds the line)
+- Under: American odds **-100** (2x payout if the total score is below the line)
+
+[[Bet Over|note_night3][$bets[1] to 0]]
+[[Bet Under|note_night3][$bets[1] to 1]]
+
+<</type>>
+<</screen>>
+
+
+
+:: note_night3 {"position":"1325,725","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/blank_note.png?raw=true">><<type $speed>>How much money do you want to wager? Your poor meemaw's inheritance is just waiting to be gambled away!
+
+<span class="bold-red">You get the feeling that the amount of money you gambled would affect the outcome of the game...</span>
+
+<<textbox "_bet_amount" "" autofocus placeholder="Enter your bet (e.g., 50000)">>
+<<button "Submit Bet">>
+    <<if _bet_amount.match(/^\d+$/) and _bet_amount >= 0>>
+        <<set $bet_amount = parseInt(_bet_amount)>>
+        <<goto "note_summary">>
+    <<else>>
+        <<replace "#output">><span class="bold-red">Please enter a valid amount (greater than or equal to 0).</span><</replace>>
+    <</if>>
+<</button>>
+
+<span id="output"></span>
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: note_summary {"position":"1425,725","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/note_night.png?raw=true">><<type $speed>>Your note is complete. It reads:
+
+"Bet $<<print $bet_amount>> on the <<if $bets[0] === 0>>Chirfs<<else>>Cougars<</if>> and <<if $bets[1] === 0>>Over<<else>>Under<</if>> on points."
+
+You add on a "Trust me bro" for good luck. Why is it weirdly similar to the one you wrote yesterday...
+
+Go [[back|dorm]]
+<</type>>
+<</screen>>
+
+
+
+:: phone {"position":"550,825","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<if !$seen_note and !$has_bet>><<type $speed>>You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, *CrapKings*, since betting isn’t legal in California. Now if only you had some sage betting advice to gamble away your inheritance from your grandma...
+
+Go [[back|dorm]]
+<</type>>
+<<elseif $seen_note and !$has_bet>><<type $speed>>You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, *CrapKings*, since betting isn’t legal in California. Good thing you have some great advice to go off of and know the password to the bank account holding your inheritance…
+
+[[Bet your inheritance|place_bet]] from your grandma
+
+Go [[back|dorm]]
+<</type>>
+<<else>><<type $speed>>You bet such a large amount that your bets change the betting odds on the app! Hopefully your bets cash in...
+
+Go [[back|dorm]]
+<</type>>
+<</if>>
+<</screen>>
+
+
+
+:: phone_night {"position":"1125,825","size":"100,100"}
+<<run _results = setup.updateEnding($has_bet, $bets, $bet_amount)>>
+<<set _future_outcome = _results[0]>>
+<<set _final_winnings = _results[1]>>
+<<set _chirfs_win = _results[2]>>
+<<set _over_hits = _results[3]>>
+
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true">><<type $speed>>The glow of your phone screen illuminates the room as you open the *CrapKings* app.
+
+<<if !$has_bet>>You scroll aimlessly through the app, tempted to place a bet. Crap. Maybe you should've bet on the game today...
+
+Go [[back|dorm]]
+<<else>>
+<<if _final_winnings < 0>>
+Your balance is in the red: $<<print _final_winnings>>. Looks like CrapKings might own you now...
+<<elseif _final_winnings <= 50000>>
+Your balance is at $<<print _final_winnings>>. 
+<<elseif _final_winnings <= 100000>>
+Your account balance is now $<<print _final_winnings>>. Not bad at all — grandma would be proud.
+<<elseif _final_winnings <= 200000>>
+Your account balance is now $<<print _final_winnings>>. What should you do with all this money?
+<<else>>
+Your account balance is now $<<print _final_winnings>>. Time to go crazy...
+<</if>>
+
+Go [[back|dorm]]
+<</if>>
+<</type>>
+<</screen>>
+
+
+:: place_bet {"position":"650,825","size":"100,100"}
+<<set $has_bet = true>>
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<type $speed>>You confirm your bet of <span class="bold-red">$bet_amount</span> on the *CrapKings* app.
+
+"Thanks meemaw! This parlay goes out to you..."
+
+The parlay is placed:  
+- Team: <<if $bets[0] === 0>>Chirfs at -200<<else>>Cougars at +200<</if>> 
+- Over/Under: <<if $bets[1] === 0>>Over at -100<<else>>Under at -100<</if>>  
+Good luck!
+
+Your bet shifts the market. [[I wonder if that'll affect the outcome of the game.. |dorm]]
+<</type>>
+<</screen>>
+
+
+:: restart {"position":"250,750","size":"100,100"}
+<<set $tv_visited_times = 0>> 
+<<set $has_bet = false>> 
+<<set $future_outcome = "blank">> <!-- Placeholder for future outcome -->
+<<set $is_day= true>>
+<<set $seen_note = false>> 
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/dorm.png?raw=true">><<type $speed>>It's the first day of classes at Swarthmore College on <span class="bold-red">September 7th, 2023</span>, and you're<</type>>
+
+<<type 1000ms>>...<</type>>
+
+<<type $speed>>Wait a minute... You get the feeling you've been here before.
+
+You notice a weird pair of — [[are those goggles?|dorm]]
+
+[[(fast mode)|dorm][$speed to "1ms"]]
+
+<</type>>
+<</screen>>
+
+
+
+:: sleep {"position":"650,925","size":"100,100"}
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/blank.png?raw=true">><<type $speed>>Your morning alarm sounds:<</type>>
+<<timed 3s transition>><</timed>><<type $speed>><span class="bold-red">BEEP</span><</type>>
+<<timed 3s transition>><</timed>><<type $speed>><span class="bold-red">BEEP</span><</type>>
+<<timed 3s transition>><</timed>><<type $speed>><span class="bold-red">BEEP</span><</type>>
+<<type $speed>>Oh shit, <span class="bold-red">you're late</span> for class.
+
+[[Get out of bed|restart]] without brushing your teeth
+<</type>>
+<</screen>>
+
+
+
+:: test {"position":"375,475","size":"100,100"}
+<<run _results = setup.updateEnding($has_bet, $bets, $bet_amount)>>
+<<set _future_outcome = _results[0]>>
+<<set _final_winnings = _results[1]>>
+<<set _chirfs_win = _results[2]>>
+<<set _over_hits = _results[3]>>
+
+Future Outcome: <<print _future_outcome>>  
+Final Winnings: <<print _final_winnings>>  
+Chirfs Win: <<print _chirfs_win>>  
+Over Hits: <<print _over_hits>>
+
+
+
+:: StoryScript [script]
+window.back = "";
+
+Macro.add('screen', {
+    tags: [], // This defines the macro as an enclosing macro
+    handler: function () {
+        var imageUrl = this.args[0];
+        var content = this.payload[0].contents;
+
+        /* Build the HTML structure */
+        var output = '<div class="screen">';
+        output += '<div class="image">';
+        output += '<img src="' + imageUrl + '" alt="Image" usemap="#image-map">';
+        output += '</div>';
+        output += '<div class="dialogue">';
+      	output += '<<type 50ms>>';
+        output += content;
+        output += '<</type>>';
+        output += '</div>';
+        output += '</div>';
+
+        /* Render the content */
+        new Wikifier(this.output, output);
+    }
+});
+setup.updateEnding = function (hasBet, bets, betAmount) {
+    const [ending, winnings, chirfsWin, overHits] = setup.determineEnding(hasBet, bets, betAmount);
+    return [ending, winnings, chirfsWin, overHits];
+};
+
+setup.determineEnding = function (hasBet, bets, betAmount) {
+    const payouts = {
+        chirfsWin: 1.5,
+        cougarsWin: 3,
+        over: 2,
+        under: 2
+    };
+
+    const chirfsWin = betAmount % 3 !== 2;
+    const overHits = betAmount % 4 <= 1;
+
+    let winnings = 50000 - betAmount;
+
+    if (!hasBet) {
+        return ["blank", winnings, chirfsWin, overHits];
+    }
+
+    if (bets[0] === 0 && chirfsWin && bets[1] === 0 && overHits) {
+    // Chirfs win + Over hits (parlay)
+    winnings += betAmount * payouts.chirfsWin * payouts.over;
+} else if (bets[0] === 0 && chirfsWin && bets[1] === 1 && !overHits) {
+    // Chirfs win + Under hits (parlay)
+    winnings += betAmount * payouts.chirfsWin * payouts.under;
+} else if (bets[0] === 1 && !chirfsWin && bets[1] === 0 && overHits) {
+    // Lions win + Over hits (parlay)
+    winnings += betAmount * payouts.cougarsWin * payouts.over;
+} else if (bets[0] === 1 && !chirfsWin && bets[1] === 1 && !overHits) {
+    // Lions win + Under hits (parlay)
+    winnings += betAmount * payouts.cougarsWin * payouts.under;
+}
+  
+    const disasterMod = betAmount % 11;
+    let disaster = null;
+    if (disasterMod === 0) {
+        disaster = "home";
+    } else if (disasterMod === 1) {
+        disaster = "dystopia";
+    }
+
+    if (disaster) {
+        return [disaster, winnings, chirfsWin, overHits];
+    } else if (winnings > 200000) {
+        return ["beach", winnings, chirfsWin, overHits];
+    } else if (winnings > 100000) {
+        return ["cafe", winnings, chirfsWin, overHits];
+    } else if (winnings < 0) {
+        return ["lounge", winnings, chirfsWin, overHits];
+    } else {
+        return ["dorm", winnings, chirfsWin, overHits];
+    }
+};
+
+
+:: StoryStylesheet [stylesheet]
+/* Import the "Press Start 2P" font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#ui-bar, #ui-bar-toggle {
+    display: none !important;
+}
+
+/* Set the font and background for the entire story */
+body {
+    image-rendering: pixelated;  /* Ensures pixel art is crisp */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1vw; /* Base font size scales with screen */
+    background-color: #1b191b;
+    color: #a9b2a2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Updated CSS for .screen */
+.screen {
+    position: absolute;
+    top: 3vw;
+    bottom: 3vw;
+    left: 3vw;
+    right: 3vw;
+    width: 93vw;
+    height: 35vw;
+    border: 0.5vw solid #a9b2a2;
+    background-color: #1b191b;
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+}
+
+/* Image container adjustments */
+.screen .image {
+    flex: 0 0 35%; /* 35% of the screen width */
+    max-width: 35%; /* Ensure the image never exceeds this width */
+    max-height: 33vw; /* Cap height based on the screen container */
+    display: flex;
+    justify-content: flex-start; /* Align image to the start (left) */
+    align-items: center; /* Vertically center the image */
+    margin: 1.2vw; /* Reduced margin for tighter spacing */
+    box-sizing: border-box;
+}
+
+/* Ensure the image scales properly */
+.screen .image img {
+    width: 100%; /* Force the image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra spacing below the image */
+}
+
+/* Style for the dialogue area */
+.screen .dialogue {
+    flex: 1; /* Take up the remaining space */
+    overflow-y: auto;
+    padding: 1.2vw; /* Reduced padding for more compact text area */
+    padding-left: 0px;
+    box-sizing: border-box;
+    font-size: 1.2vw; /* Adjusted for better readability */
+    line-height: 1.6; /* Slightly tighter line spacing */
+  
+  	/* Hide scrollbar arrows */
+    scrollbar-width: auto; /* For Firefox */
+    scrollbar-color: #a9b2a2 #2e222f; /* White scrollbar, black 
+  track*/
+    scrollbar-button-display: none
+}
+
+/* Style for links */
+.screen .dialogue a {
+    color: #f2ec8b;
+    text-decoration: none;
+}
+
+.screen .dialogue a:hover {
+    text-decoration: underline;
+}
+
+.screen .dialogue speech{
+  color: #f1e9e4;
+}
+
+.bold-red {
+    font-weight: bold;
+    color: #f16363;
+}

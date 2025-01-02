@@ -389,19 +389,19 @@ Go [[back|dorm]]
 
 The note reads:
 
-&quot;Bet $bet_amount on the &lt;&lt;if $bets[0] === 0&gt;&gt;Chirfs&lt;&lt;else&gt;&gt;Cougars&lt;&lt;/if&gt;&gt; and &lt;&lt;if $bets[1] === 0&gt;&gt;Over&lt;&lt;else&gt;&gt;Under&lt;&lt;/if&gt;&gt; on points
+&quot;Bet &lt;span class=&quot;bold-red&quot;&gt;$bet_amount&lt;/span&gt; on the &lt;&lt;if $bets[0] === 0&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;Chirfs&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;Cougars&lt;/span&gt;&lt;&lt;/if&gt;&gt; and &lt;&lt;if $bets[1] === 0&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;over&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;under&lt;/span&gt;&lt;&lt;/if&gt;&gt; on points
 Trust me bro&quot;
 
-&lt;&lt;/type&gt;&gt;&lt;&lt;timed 1s transition&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;type $speed&gt;&gt;That&#39;s seems like some great betting advice...
+&lt;&lt;/type&gt;&gt;&lt;&lt;timed 1s transition&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;type $speed&gt;&gt;That seems like some great betting advice...
 
 Go [[back|dorm]]
 &lt;&lt;/type&gt;&gt;
 &lt;&lt;/screen&gt;&gt;
-</tw-passagedata><tw-passagedata pid="7" name="phone" tags="" position="550,825" size="100,100">&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true&quot;&gt;&gt;&lt;&lt;if !$seen_note and !$has_bet&gt;&gt;&lt;&lt;type $speed&gt;&gt;You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, *CrapKings*, since betting isn’t legal in California. Now if only you had some sage betting advice to gamble away your inheritance from your grandma...
+</tw-passagedata><tw-passagedata pid="7" name="phone" tags="" position="550,825" size="100,100">&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true&quot;&gt;&gt;&lt;&lt;if !$seen_note and !$has_bet&gt;&gt;&lt;&lt;type $speed&gt;&gt;You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt;, since betting isn’t legal in California. Now if only you had some sage betting advice to gamble away your inheritance from your grandma...
 
 Go [[back|dorm]]
 &lt;&lt;/type&gt;&gt;
-&lt;&lt;elseif $seen_note and !$has_bet&gt;&gt;&lt;&lt;type $speed&gt;&gt;You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, *CrapKings*, since betting isn’t legal in California. Good thing you have some great advice to go off of and know the password to the bank account holding your inheritance…
+&lt;&lt;elseif $seen_note and !$has_bet&gt;&gt;&lt;&lt;type $speed&gt;&gt;You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt;, since betting isn’t legal in California. Good thing you have some great advice to go off of and know the password to the bank account holding your inheritance…
 
 [[Bet your inheritance|place_bet]] from your grandma
 
@@ -493,7 +493,7 @@ Go [[back|dorm]]
 &lt;&lt;set _chirfs_win = _results[2]&gt;&gt;
 &lt;&lt;set _over_hits = _results[3]&gt;&gt;
 
-&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true&quot;&gt;&gt;&lt;&lt;type $speed&gt;&gt;The glow of your phone screen illuminates the room as you open the *CrapKings* app.
+&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true&quot;&gt;&gt;&lt;&lt;type $speed&gt;&gt;The glow of your phone screen illuminates the room as you open the &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt; app.
 
 &lt;&lt;if !$has_bet&gt;&gt;You scroll aimlessly through the app, tempted to place a bet. Crap. Maybe you should&#39;ve bet on the game today...
 
@@ -613,7 +613,7 @@ You notice a weird pair of — [[are those goggles?|dorm]]
 &lt;&lt;/type&gt;&gt;
 &lt;&lt;/screen&gt;&gt;
 </tw-passagedata><tw-passagedata pid="24" name="place_bet" tags="" position="650,825" size="100,100">&lt;&lt;set $has_bet = true&gt;&gt;
-&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true&quot;&gt;&gt;&lt;&lt;type $speed&gt;&gt;You confirm your bet of &lt;span class=&quot;bold-red&quot;&gt;$bet_amount&lt;/span&gt; on the *CrapKings* app.
+&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true&quot;&gt;&gt;&lt;&lt;type $speed&gt;&gt;You confirm your bet of &lt;span class=&quot;bold-red&quot;&gt;$bet_amount&lt;/span&gt; on the &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt; app.
 
 &quot;Thanks meemaw! This parlay goes out to you...&quot;
 
@@ -676,7 +676,7 @@ Go [[back|dorm]]
 &lt;&lt;/screen&gt;&gt;
 </tw-passagedata><tw-passagedata pid="29" name="note_summary" tags="" position="1225,725" size="100,100">&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/note_night.png?raw=true&quot;&gt;&gt;&lt;&lt;type $speed&gt;&gt;Your note is complete. It reads:
 
-&quot;Bet $&lt;&lt;print $bet_amount&gt;&gt; on the &lt;&lt;if $bets[0] === 0&gt;&gt;Chirfs&lt;&lt;else&gt;&gt;Cougars&lt;&lt;/if&gt;&gt; and &lt;&lt;if $bets[1] === 0&gt;&gt;Over&lt;&lt;else&gt;&gt;Under&lt;&lt;/if&gt;&gt; on points.&quot;
+&quot;Bet &lt;span class=&quot;bold-red&quot;&gt;$bet_amount&lt;/span&gt; on the &lt;&lt;if $bets[0] === 0&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;Chirfs&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;Cougars&lt;/span&gt;&lt;&lt;/if&gt;&gt; and &lt;&lt;if $bets[1] === 0&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;over&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;span class=&quot;bold-red&quot;&gt;under&lt;/span&gt;&lt;&lt;/if&gt;&gt; on points&quot;
 
 You add on a &quot;Trust me bro&quot; for good luck. Why is it weirdly similar to the one you wrote yesterday...
 
@@ -737,9 +737,9 @@ Hint: Try betting on different outcomes and different amounts after watching the
 &lt;&lt;/screen&gt;&gt;
 </tw-passagedata><tw-passagedata pid="39" name="ending_home2" tags="" position="550,1375" size="100,100">&lt;&lt;screen &quot;https://github.com/swangtree/the_moth_effect/blob/main/images/endings/empty_room.png?raw=true&quot;&gt;&gt;&lt;&lt;type $speed_end&gt;&gt;After waking up, the news hits like a truck: a massive bean-eating epidemic originating in Britain has spiraled out of control. The world is shutting down again, and all major British financial institutions have been frozen.
 &lt;&lt;if $final_winnings &gt; 50000&gt;&gt;
-You check your CrapKings account. Your gambling wins are frozen. All that money... and nowhere to spend it. Who knew CrapKings was British??
+You check your &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt; account. Your gambling wins are frozen. All that money... and nowhere to spend it. Who knew &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt; was British??
 &lt;&lt;else&gt;&gt;
-You check your CrapKings account. Your gambling losses are frozen. Who knew CrapKings was British?
+You check your &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt; account. Your gambling losses are frozen. Who knew &lt;span class=&quot;bold-red&quot;&gt;*Crapkings*&lt;/span&gt; was British?
 &lt;&lt;/if&gt;&gt;
 A couple months later, you&#39;re forced out of your Swarthmore dorm, packing it up as clean as you found it. You spend the next year watching Rick Night bumbling his ass off and dreading anything bean related.
 

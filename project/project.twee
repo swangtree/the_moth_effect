@@ -42,7 +42,7 @@ Go [[back|dorm]]
 <</screen>>
 
 
-:: bed_night {"position":"1125,925","size":"100,100"}
+:: bed_night {"position":"925,925","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true">><<type $speed>>Your bed looks ridiculously inviting right now. It's been a long day, and the glow of the moon through the window only makes your bed look softer.
 
 Maybe it’s time to end the day and see what tomorrow brings…
@@ -92,7 +92,7 @@ Go [[back|dorm]]
 
 
 
-:: desk_night {"position":"1125,525","size":"100,100"}
+:: desk_night {"position":"925,525","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/desk_night.png?raw=true">><<type $speed>>The faint hum of the CRT fills the room as an endless late-night infomercial blares on the screen. 
 
 “Introducing the **ShamKapow™**! The revolutionary cleaning cloth that absorbs **10 times its weight in liquid!** That’s right, **10 TIMES!**
@@ -257,9 +257,9 @@ Hint: Try betting on different outcomes and different amounts after watching the
 :: ending_home2 {"position":"550,1375","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/endings/empty_room.png?raw=true">><<type $speed_end>>After waking up, the news hits like a truck: a massive bean-eating epidemic originating in Britain has spiraled out of control. The world is shutting down again, and all major British financial institutions have been frozen.
 <<if $final_winnings > 50000>>
-You check your CrapKings account. Your gambling wins are frozen. All that money... and nowhere to spend it. Who knew CrapKings was British??
+You check your <span class="bold-red">*Crapkings*</span> account. Your gambling wins are frozen. All that money... and nowhere to spend it. Who knew <span class="bold-red">*Crapkings*</span> was British??
 <<else>>
-You check your CrapKings account. Your gambling losses are frozen. Who knew CrapKings was British?
+You check your <span class="bold-red">*Crapkings*</span> account. Your gambling losses are frozen. Who knew <span class="bold-red">*Crapkings*</span> was British?
 <</if>>
 A couple months later, you're forced out of your Swarthmore dorm, packing it up as clean as you found it. You spend the next year watching Rick Night bumbling his ass off and dreading anything bean related.
 
@@ -453,7 +453,7 @@ Go [[back|dorm]]
 <</screen>>
 
 
-:: goggles_night {"position":"1125,625","size":"100,100"}
+:: goggles_night {"position":"925,625","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/goggles_night.png?raw=true">><<type $speed>>The goggles sit on your floor, faintly reflecting the moonlight streaming through your window.
 
 On the side of the goggles, you read the same cryptic text:
@@ -491,10 +491,10 @@ Go [[back|dorm]]
 
 The note reads:
 
-"Bet $bet_amount on the <<if $bets[0] === 0>>Chirfs<<else>>Cougars<</if>> and <<if $bets[1] === 0>>Over<<else>>Under<</if>> on points
+"Bet <span class="bold-red">$bet_amount</span> on the <<if $bets[0] === 0>><span class="bold-red">Chirfs</span><<else>><span class="bold-red">Cougars</span><</if>> and <<if $bets[1] === 0>><span class="bold-red">over</span><<else>><span class="bold-red">under</span><</if>> on points
 Trust me bro"
 
-<</type>><<timed 1s transition>><</timed>><<type $speed>>That's seems like some great betting advice...
+<</type>><<timed 1s transition>><</timed>><<type $speed>>That seems like some great betting advice...
 
 Go [[back|dorm]]
 <</type>>
@@ -502,7 +502,7 @@ Go [[back|dorm]]
 
 
 
-:: note_night {"position":"1125,725","size":"100,100"}
+:: note_night {"position":"925,725","size":"100,100"}
 <<set $bets = [0, 0]>>
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/note_night.png?raw=true">><<type $speed>>There's a blank note on your desk. <span class="bold-red">Maybe you should write a note for what you should've bet on...</span>
 
@@ -520,7 +520,7 @@ Go [[back|dorm]]
 
 
 
-:: note_night2 {"position":"1225,725","size":"100,100"}
+:: note_night2 {"position":"1025,725","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/blank_note.png?raw=true">><<type $speed>>Let's make this thing into a parlay!
 
 Will the total combined score of the game go over or under 53 points?
@@ -536,7 +536,7 @@ Will the total combined score of the game go over or under 53 points?
 
 
 
-:: note_night3 {"position":"1325,725","size":"100,100"}
+:: note_night3 {"position":"1125,725","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/blank_note.png?raw=true">><<type $speed>>How much money do you want to wager? Your poor meemaw's inheritance is just waiting to be gambled away!
 
 <span class="bold-red">You get the feeling that the amount of money you gambled would affect the outcome of the game...</span>
@@ -559,10 +559,10 @@ Go [[back|dorm]]
 
 
 
-:: note_summary {"position":"1425,725","size":"100,100"}
+:: note_summary {"position":"1225,725","size":"100,100"}
 <<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/note_night.png?raw=true">><<type $speed>>Your note is complete. It reads:
 
-"Bet $<<print $bet_amount>> on the <<if $bets[0] === 0>>Chirfs<<else>>Cougars<</if>> and <<if $bets[1] === 0>>Over<<else>>Under<</if>> on points."
+"Bet <span class="bold-red">$bet_amount</span> on the <<if $bets[0] === 0>><span class="bold-red">Chirfs</span><<else>><span class="bold-red">Cougars</span><</if>> and <<if $bets[1] === 0>><span class="bold-red">over</span><<else>><span class="bold-red">under</span><</if>> on points"
 
 You add on a "Trust me bro" for good luck. Why is it weirdly similar to the one you wrote yesterday...
 
@@ -573,11 +573,11 @@ Go [[back|dorm]]
 
 
 :: phone {"position":"550,825","size":"100,100"}
-<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<if !$seen_note and !$has_bet>><<type $speed>>You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, *CrapKings*, since betting isn’t legal in California. Now if only you had some sage betting advice to gamble away your inheritance from your grandma...
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<if !$seen_note and !$has_bet>><<type $speed>>You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, <span class="bold-red">*Crapkings*</span>, since betting isn’t legal in California. Now if only you had some sage betting advice to gamble away your inheritance from your grandma...
 
 Go [[back|dorm]]
 <</type>>
-<<elseif $seen_note and !$has_bet>><<type $speed>>You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, *CrapKings*, since betting isn’t legal in California. Good thing you have some great advice to go off of and know the password to the bank account holding your inheritance…
+<<elseif $seen_note and !$has_bet>><<type $speed>>You just moved to Philadelphia for college from the suffocating boringness of Claremont. You eagerly eye the new sports betting app you’ve downloaded, <span class="bold-red">*Crapkings*</span>, since betting isn’t legal in California. Good thing you have some great advice to go off of and know the password to the bank account holding your inheritance…
 
 [[Bet your inheritance|place_bet]] from your grandma
 
@@ -592,14 +592,14 @@ Go [[back|dorm]]
 
 
 
-:: phone_night {"position":"1125,825","size":"100,100"}
+:: phone_night {"position":"925,825","size":"100,100"}
 <<run _results = setup.updateEnding($has_bet, $bets, $bet_amount)>>
 <<set _future_outcome = _results[0]>>
 <<set _final_winnings = _results[1]>>
 <<set _chirfs_win = _results[2]>>
 <<set _over_hits = _results[3]>>
 
-<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true">><<type $speed>>The glow of your phone screen illuminates the room as you open the *CrapKings* app.
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed_night.png?raw=true">><<type $speed>>The glow of your phone screen illuminates the room as you open the <span class="bold-red">*Crapkings*</span> app.
 
 <<if !$has_bet>>You scroll aimlessly through the app, tempted to place a bet. Crap. Maybe you should've bet on the game today...
 
@@ -625,7 +625,7 @@ Go [[back|dorm]]
 
 :: place_bet {"position":"650,825","size":"100,100"}
 <<set $has_bet = true>>
-<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<type $speed>>You confirm your bet of <span class="bold-red">$bet_amount</span> on the *CrapKings* app.
+<<screen "https://github.com/swangtree/the_moth_effect/blob/main/images/bed.png?raw=true">><<type $speed>>You confirm your bet of <span class="bold-red">$bet_amount</span> on the <span class="bold-red">*Crapkings*</span> app.
 
 "Thanks meemaw! This parlay goes out to you..."
 
